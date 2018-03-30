@@ -1,0 +1,31 @@
+SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT ;
+SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS;
+SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION;
+SET NAMES utf8;
+SET @OLD_TIME_ZONE=@@TIME_ZONE;
+SET TIME_ZONE='+00:00';
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
+
+CREATE DATABASE  IF NOT EXISTS `music-realm` DEFAULT CHARACTER SET latin1;
+USE `music-realm`;
+
+
+-- -----------------------------------------------------
+-- Table `songs` 
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `songs` ;
+
+CREATE TABLE IF NOT EXISTS `songs` (
+  `id` bigint(10) unsigned NOT NULL AUTO_INCREMENT,
+  `artiste` char(40) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `pub_date` datetime NOT NULL,
+  `thumbnail` text,
+  `source` text NOT NULL,
+  `insert_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
